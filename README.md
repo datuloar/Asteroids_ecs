@@ -10,3 +10,4 @@
 * ECS- Leo ecs lite
 * Addressables
 * MVC - UI
+* Assembly definition
