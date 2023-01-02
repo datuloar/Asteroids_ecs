@@ -11,4 +11,4 @@
 * Addressables
 * MVC - UI
 * Assembly definition
-* CI
+* ci/cd
