@@ -11,4 +11,5 @@
 * Addressables
 * MVC - UI
 * Assembly definition
-* ci/cd
+* ci
+* Unit testing
