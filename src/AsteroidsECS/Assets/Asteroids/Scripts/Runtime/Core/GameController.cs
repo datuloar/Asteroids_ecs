@@ -1,6 +1,7 @@
 using Asteroids.Core.Ecs;
 using Cysharp.Threading.Tasks;
 using System;
+using System.Diagnostics;
 using Zenject;
 
 namespace Asteroids.Core.Game
@@ -9,18 +10,18 @@ namespace Asteroids.Core.Game
     {
         private IECSRunner _ecsRunner;
 
-        public override event Action Completed;
-        public override event Action Paused;
-
         [Inject]
         public void Construct(IECSRunner ecsRunner)
         {
             _ecsRunner = ecsRunner;
+            print("construct");
         }
 
         public async override UniTask Initialize()
         {
-            _ecsRunner.Initialize();
+            _ecsRunner.Initialize(); 
+            print("init");
+
             await UniTask.CompletedTask;
         }
 

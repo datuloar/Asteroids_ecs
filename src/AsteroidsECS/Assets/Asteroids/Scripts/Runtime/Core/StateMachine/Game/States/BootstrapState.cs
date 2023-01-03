@@ -20,7 +20,7 @@ namespace Asteroids.StateMachine.States
             await InitializeExternalServices();
 
             _gameStateMachine.Enter<LoadLevelState, LoadLevelData>(
-                new LoadLevelData("Level ...", LoadSceneMode.Additive));
+                new LoadLevelData("Level 1", LoadSceneMode.Additive));
         }
 
         public void Exit()

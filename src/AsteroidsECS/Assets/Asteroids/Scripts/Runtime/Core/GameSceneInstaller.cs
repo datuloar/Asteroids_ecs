@@ -14,5 +14,7 @@ public class GameSceneInstaller : MonoInstaller
         Container.Bind<IECSRunner>().To<ECSRunner>().AsSingle();
         Container.Bind<IConfigProvider>().To<ConfigProvider>().AsSingle();
         Container.Bind<IGameFactory>().To<GameFactory>().AsSingle();
+
+        ServicesInstaller.Install(Container);
     }
 }

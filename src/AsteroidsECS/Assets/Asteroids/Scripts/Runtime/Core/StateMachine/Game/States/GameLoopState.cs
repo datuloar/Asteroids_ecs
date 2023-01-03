@@ -18,32 +18,16 @@ namespace Asteroids.StateMachine.States
         public void Enter(BaseGameController baseGameController)
         {
             _baseGameController = baseGameController;
-
-            _baseGameController.Completed += OnGameCompleted;
-            _baseGameController.Completed += OnGamePaused;
         }
 
         public void Exit()
         {
             _baseGameController.CleanUp();
-
-            _baseGameController.Completed -= OnGameCompleted;
-            _baseGameController.Completed -= OnGamePaused;
         }
 
         public void Tick()
         {
             _baseGameController.Tick();
-        }
-
-        private void OnGamePaused()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void OnGameCompleted()
-        {
-            throw new NotImplementedException();
         }
     }
 }
