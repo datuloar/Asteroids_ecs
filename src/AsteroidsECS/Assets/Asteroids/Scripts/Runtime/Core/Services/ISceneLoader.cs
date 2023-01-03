@@ -5,6 +5,6 @@ namespace Asteroids.Core.Scene
 {
     public interface ISceneLoader
     {
-        UniTask<BaseSceneView> LoadSceneAsync(string name, LoadSceneMode mode);
+        UniTask LoadSceneAsync(string name, LoadSceneMode mode);
     }
 }

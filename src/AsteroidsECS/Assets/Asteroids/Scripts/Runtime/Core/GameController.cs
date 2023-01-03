@@ -1,12 +1,16 @@
 using Asteroids.Core.Ecs;
 using Cysharp.Threading.Tasks;
+using System;
 using Zenject;
 
-namespace Asteroids.Core.Scene
+namespace Asteroids.Core.Game
 {
-    public class GameSceneView : BaseSceneView
+    public class GameController : BaseGameController
     {
         private IECSRunner _ecsRunner;
+
+        public override event Action Completed;
+        public override event Action Paused;
 
         [Inject]
         public void Construct(IECSRunner ecsRunner)
@@ -31,5 +35,3 @@ namespace Asteroids.Core.Scene
         }
     }
 }
-
-

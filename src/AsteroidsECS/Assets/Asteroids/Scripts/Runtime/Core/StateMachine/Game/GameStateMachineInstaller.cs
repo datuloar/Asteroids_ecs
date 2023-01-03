@@ -8,8 +8,8 @@ namespace Asteroids.StateMachine.States
         public override void InstallBindings()
         {
             Container.BindFactory<IGameStateMachine, BootstrapState, BootstrapStateFactory>();
-            Container.BindFactory<IGameStateMachine, SceneLoopState, SceneLoopStateFactory>();
-            Container.BindFactory<IGameStateMachine, LoadSceneState, LoadSceneStateFactory>();
+            Container.BindFactory<IGameStateMachine, GameLoopState, GameLoopStateFactory>();
+            Container.BindFactory<IGameStateMachine, LoadLevelState, LoadLevelStateFactory>();
 
             Container.Bind(typeof(IGameStateMachine), typeof(ITickable)).To<GameStateMachine>().AsSingle();
         }
@@ -17,7 +17,7 @@ namespace Asteroids.StateMachine.States
 
     public class BootstrapStateFactory : PlaceholderFactory<IGameStateMachine, BootstrapState> { }
 
-    public class SceneLoopStateFactory : PlaceholderFactory<IGameStateMachine, SceneLoopState> { }
+    public class GameLoopStateFactory : PlaceholderFactory<IGameStateMachine, GameLoopState> { }
 
-    public class LoadSceneStateFactory : PlaceholderFactory<IGameStateMachine, LoadSceneState> { }
+    public class LoadLevelStateFactory : PlaceholderFactory<IGameStateMachine, LoadLevelState> { }
 }

@@ -1,6 +1,7 @@
 ﻿using Asteroids.Core.Scene;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace Asteroids.StateMachine.States
@@ -18,11 +19,8 @@ namespace Asteroids.StateMachine.States
         {
             await InitializeExternalServices();
 
-            _gameStateMachine.Enter<LoadSceneState, SceneData>(new SceneData
-            {
-                Name = "Level ...",
-                LoadMode = UnityEngine.SceneManagement.LoadSceneMode.Additive
-            });
+            _gameStateMachine.Enter<LoadLevelState, LoadLevelData>(
+                new LoadLevelData("Level ...", LoadSceneMode.Additive));
         }
 
         public void Exit()
