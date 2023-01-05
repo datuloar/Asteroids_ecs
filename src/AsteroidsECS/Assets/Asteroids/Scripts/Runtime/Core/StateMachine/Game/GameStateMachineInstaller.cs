@@ -7,7 +7,7 @@ namespace Asteroids.StateMachine.States
     {
         public override void InstallBindings()
         {
-            Container.BindFactory<IGameStateMachine, BootstrapState, BootstrapStateFactory>();
+            Container.BindFactory<IGameStateMachine, LoadGameState, BootstrapStateFactory>();
             Container.BindFactory<IGameStateMachine, GameLoopState, GameLoopStateFactory>();
             Container.BindFactory<IGameStateMachine, LoadLevelState, LoadLevelStateFactory>();
 
@@ -15,7 +15,7 @@ namespace Asteroids.StateMachine.States
         }
     }
 
-    public class BootstrapStateFactory : PlaceholderFactory<IGameStateMachine, BootstrapState> { }
+    public class BootstrapStateFactory : PlaceholderFactory<IGameStateMachine, LoadGameState> { }
 
     public class GameLoopStateFactory : PlaceholderFactory<IGameStateMachine, GameLoopState> { }
 

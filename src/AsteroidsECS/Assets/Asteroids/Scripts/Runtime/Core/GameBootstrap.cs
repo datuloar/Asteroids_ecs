@@ -18,7 +18,7 @@ namespace Asteroids.Core
 
         private void Start()
         {
-            _gameStateMachine.Enter<BootstrapState>();
+            _gameStateMachine.Enter<LoadGameState>();
         }
     }
 }

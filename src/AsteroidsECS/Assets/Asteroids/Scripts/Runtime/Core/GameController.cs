@@ -2,10 +2,12 @@ using Asteroids.Core.Ecs;
 using Cysharp.Threading.Tasks;
 using System;
 using System.Diagnostics;
+using UnityEngine;
 using Zenject;
 
 namespace Asteroids.Core.Game
 {
+
     public class GameController : BaseGameController
     {
         private IECSRunner _ecsRunner;
@@ -14,14 +16,11 @@ namespace Asteroids.Core.Game
         public void Construct(IECSRunner ecsRunner)
         {
             _ecsRunner = ecsRunner;
-            print("construct");
         }
 
         public async override UniTask Initialize()
         {
             _ecsRunner.Initialize(); 
-            print("init");
-
             await UniTask.CompletedTask;
         }
 

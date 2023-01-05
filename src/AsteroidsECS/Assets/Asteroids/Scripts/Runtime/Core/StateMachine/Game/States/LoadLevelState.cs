@@ -30,7 +30,7 @@ namespace Asteroids.StateMachine.States
 
         public void Exit()
         {
-            
+
         }
 
         private BaseGameController GetGameControllerFromLoadedScene()
